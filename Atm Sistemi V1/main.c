@@ -1,10 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "atm.h"
 
 void menuYazdir();
 
 int main(int argc, char** argv) {
+    printf("-----[GIRIS EKRANI]-----\n");
+    char sifre1[UZUNLUK];
+    char sifre2[UZUNLUK];
+    printf("Devam etmek icin lutfen sifrenizi giriniz :");
+    scanf("%s",sifre1);
+    
+    FILE* filePtr = NULL;
+    filePtr = fopen("pass.txt","r");
+    fscanf(filePtr,"%s",sifre2);
+    fclose(filePtr);
+    
+    if(strcmp(sifre1,sifre2)==0) {
+        printf("Giris basarili\n");
+    } 
+    else {
+        printf("Sifre yanlis.Lutfen tekrar deneyiniz.\n");
+    return 0;
+}
     int secim;
     
     while(1) {
