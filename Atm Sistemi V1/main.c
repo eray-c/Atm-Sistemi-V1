@@ -46,6 +46,9 @@ int main(int argc, char** argv) {
         case 0:
             printf("Cikis yapiliyor...");
             exit(0);
+        default:
+            printf("Lutfen gecerli bir islem seciniz.\n");
+            break;
     }
   }
     
